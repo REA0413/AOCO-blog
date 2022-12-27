@@ -21,7 +21,6 @@ from dotenv import load_dotenv
 
 load_dotenv('C:/Users/andre/PycharmProjects/.env-sensitiveinfo')
 secret_key = os.getenv("secret_key")
-print(secret_key)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secret_key
