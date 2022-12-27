@@ -13,8 +13,15 @@ import secrets
 from functools import wraps
 from sqlalchemy import Table, Column, Integer, ForeignKey
 from flask_gravatar import Gravatar
+import os
+from dotenv import load_dotenv
 
-secret_key = secrets.token_urlsafe(16)
+# secret_key = secrets.token_urlsafe(16)
+# print(secret_key)
+
+load_dotenv('C:/Users/andre/PycharmProjects/.env-sensitiveinfo')
+secret_key = os.getenv("secret_key")
+print(secret_key)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secret_key
